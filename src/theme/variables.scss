@@ -1,2 +1,12 @@
-// For information on how to create your own theme, please see:
-// http://ionicframework.com/docs/theming/
+:root {
+    --primary-black: #000000;
+    --primary-white: #ffffff;
+    --secondary-color: #333333;
+    --progress: #e0e0e0;
+    --progress-low: #ff0000;
+    --progress-medium-low: #ff6600;
+    --progress-medium: #ffcc00;
+    --progress-medium-high: #99cc33;
+    --progress-high: #00cc44;
+    --dark-gray: #464646;
+}

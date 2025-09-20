@@ -1,0 +1,27 @@
+ion-item::part(native) {
+    min-height: auto;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    --inner-padding-end: 0;
+    background: transparent;
+    --background: transparent;
+}
+
+img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.noImg {
+    object-fit: contain;
+    object-position: center;
+}
+
+@media (prefers-color-scheme: dark) {
+    ion-card {
+        box-shadow: 0 0.125rem 0.5rem 0 var(--dark-gray);
+    }
+}

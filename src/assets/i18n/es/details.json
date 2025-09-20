@@ -1,0 +1,16 @@
+{
+    "DETAILS": {
+        "LIFE_SPAN": "<span>Esperanza de vida:</span> {{lifeSpan}} años",
+        "ADAPTABILITY": "Adaptabilidad:",
+        "AFFECTION_LEVEL": "Nivel de afecto:",
+        "CHILD_FRIENDLY": "Amigable con niños:",
+        "DOG_FRIENDLY": "Amigable con perros:",
+        "ENERGY_LEVEL": "Nivel de energía:",
+        "GROOMING": "Cuidados de aseo:",
+        "HEALTH_ISSUES": "Problemas de salud:",
+        "INTELLIGENCE": "Inteligencia:",
+        "SHEDDING_LEVEL": "Nivel de muda:",
+        "SOCIAL_NEEDS": "Necesidades sociales:",
+        "STRANGER_FRIENDLY": "Amigable con extraños:"
+    }
+}

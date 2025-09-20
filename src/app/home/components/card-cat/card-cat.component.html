@@ -1,0 +1,31 @@
+<ion-card (click)="openDetail()">
+
+  @if(imgState(); as imgState) {
+
+    @if(imgState.isLoading) {
+      <ion-skeleton-text [animated]="true" style="margin: 0; width: 100%; height: 200px"></ion-skeleton-text>
+    } @else if(imgState.error) {
+      <img class="noImg"
+        [alt]="cat.name"
+        [src]="noImgSrc" />
+    } @else {
+      <img [alt]="cat.name"
+        [src]="imgState.url"
+        loading="lazy" />
+    }
+  }
+  
+  <ion-card-header>
+    <ion-card-title>{{cat.name}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+
+    <ion-item lines="none">
+      <ion-text slot="start" [innerHTML]="'HOME.CARD.COUNTRY' | translate: {country: cat.origin}"></ion-text>
+      <ion-text slot="end" [innerHTML]="'HOME.CARD.WEIGHT' | translate:{weight: cat.weight.metric}"></ion-text>
+    </ion-item>
+
+  </ion-card-content>
+
+</ion-card>

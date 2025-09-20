@@ -1,0 +1,11 @@
+<ion-grid class="ion-no-padding ion-no-margin">
+
+  <img alt="error"
+  [src]="imgError" />
+  
+  <ion-text>{{'ERROR.DEFAULT' | translate }}</ion-text>
+
+  <ion-button class="btn_seconday_XL"
+    (click)="retry.emit()">{{'ERROR_BUTTONS.RETRY' | translate }}</ion-button>
+
+</ion-grid>

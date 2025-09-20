@@ -1,0 +1,11 @@
+{
+    "ERROR": {
+        "DEFAULT": "Ha ocurrido un error al cargar la información, intenta nuevamente más tarde"
+    },
+    "ERROR_BUTTONS": {
+        "RETRY": "Reintentar"
+    },
+    "NO_DATA": {
+        "DEFAULT": "No se han encontrado datos para la busqueda"
+    }
+}

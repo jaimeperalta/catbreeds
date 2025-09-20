@@ -1,20 +1,32 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header [showBackButton]="false"></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    
+    <ion-searchbar debounce="1000"
+        [placeholder]="'HOME.SEARCHBAR' | translate"
+        (ionInput)="handleInput($event)"
+    ></ion-searchbar>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    @if(catState(); as catList) {
+
+        @if(catList.loadingInitial) {
+            <app-card-cat-skeleton></app-card-cat-skeleton>
+        } @else if(catList.error) {
+            <app-error (retry)="getPaginatedCats()"></app-error>
+        } @else if(!catList.data.length) {
+            <app-no-data></app-no-data>
+        } @else {
+
+            @for(cat of catList.data; track cat.id) {
+                <app-card-cat [cat]="cat"></app-card-cat>   
+            }
+
+            @if(catList.hasInfiniteScroll) {
+                <ion-infinite-scroll (ionInfinite)="getPaginatedCats(catList.page, $event)">
+                    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+                </ion-infinite-scroll>
+            }
+        }
+
+    } 
 </ion-content>

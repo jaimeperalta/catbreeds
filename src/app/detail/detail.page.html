@@ -1,0 +1,71 @@
+<app-header [showBackButton]="true"
+  [title]="catsService.catInfo()?.info?.name"></app-header>
+
+<ion-content [fullscreen]="true">
+
+  @if(catsService.catInfo(); as cat) {
+
+    <div class="detail-layout">
+    
+      <ion-card class="ion-no-margin">
+    
+        <img [alt]="cat.info.name"
+          [src]="cat.img" />
+
+      </ion-card>
+    
+      <div class="scroll-area">
+
+        <ion-item lines="none">
+          <ion-text class="ion-no-margin ion-margin-end"
+            [innerHTML]="'HOME.CARD.COUNTRY' | translate: {country: cat.info.origin}"></ion-text>
+          <ion-text [innerHTML]="'HOME.CARD.WEIGHT' | translate:{weight: cat.info.weight.metric}"></ion-text>
+        </ion-item>
+  
+        <ion-item lines="none">
+          <ion-text slot="start"
+            [innerHTML]="'DETAILS.LIFE_SPAN' | translate: {lifeSpan: cat.info.life_span}"></ion-text>
+        </ion-item>
+
+        <app-progress-lvl [progress]="cat.info.adaptability"
+          [title]="'DETAILS.ADAPTABILITY'"></app-progress-lvl>
+
+        <app-progress-lvl [progress]="cat.info.affection_level"
+          [title]="'DETAILS.AFFECTION_LEVEL'"></app-progress-lvl>
+
+        <app-progress-lvl [progress]="cat.info.child_friendly"
+          [title]="'DETAILS.CHILD_FRIENDLY'"></app-progress-lvl>
+
+        <app-progress-lvl [progress]="cat.info.dog_friendly"
+          [title]="'DETAILS.DOG_FRIENDLY'"></app-progress-lvl>
+
+        <app-progress-lvl [progress]="cat.info.energy_level"
+          [title]="'DETAILS.ENERGY_LEVEL'"></app-progress-lvl>
+
+        <app-progress-lvl [progress]="cat.info.grooming"
+          [title]="'DETAILS.GROOMING'"></app-progress-lvl>
+
+        <app-progress-lvl [progress]="cat.info.health_issues"
+          [title]="'DETAILS.HEALTH_ISSUES'"></app-progress-lvl>
+
+        <app-progress-lvl [progress]="cat.info.intelligence"
+          [title]="'DETAILS.INTELLIGENCE'"></app-progress-lvl>
+
+        <app-progress-lvl [progress]="cat.info.shedding_level"
+          [title]="'DETAILS.SHEDDING_LEVEL'"></app-progress-lvl>
+
+        <app-progress-lvl [progress]="cat.info.social_needs"
+          [title]="'DETAILS.SOCIAL_NEEDS'"></app-progress-lvl>
+      
+        <app-progress-lvl [progress]="cat.info.stranger_friendly"
+          [title]="'DETAILS.STRANGER_FRIENDLY'"></app-progress-lvl>
+    
+        <ion-item lines="none"
+          class="ion-padding-top">
+          <ion-text slot="start"
+            class="ion-no-margin">{{cat.info.description}}</ion-text>
+        </ion-item>
+      </div>
+    </div>
+  }
+</ion-content>

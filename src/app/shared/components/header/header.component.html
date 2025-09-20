@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    @if(showBackButton) {
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home"
+          text=""
+          icon="chevron-back-outline"></ion-back-button>
+      </ion-buttons>
+    }
+
+    <ion-title class="ion-text-center">
+      {{title || ('HOME.TITLE' | translate) }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>

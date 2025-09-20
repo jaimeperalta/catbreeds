@@ -1,0 +1,10 @@
+{
+    "HOME": {
+        "TITLE": "Catbreeds",
+        "SEARCHBAR": "Buscar",
+        "CARD": {
+            "COUNTRY": "<span>País:</span> {{country}}",
+            "WEIGHT": "<span>Peso:</span> {{weight}} kg"
+        }
+    }
+}
