@@ -22,7 +22,7 @@ import { NavController } from '@ionic/angular';
     IonToolbar,
     IonTitle,
     IonButtons,
-IonBackButton
+    IonBackButton
   ]
 })
 export class HeaderComponent {
@@ -31,12 +31,14 @@ export class HeaderComponent {
   private router = inject(NavController);
 
   constructor() {
-    addIcons({
-      'chevron-back-outline': chevronBackOutline,
-    });
+    this.registerIcons();
   }
 
   back(): void {
     this.router.back();
+  }
+
+  private registerIcons() {
+    addIcons({ 'chevron-back-outline': chevronBackOutline });
   }
 }

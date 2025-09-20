@@ -12,7 +12,7 @@
     "buildIosDev": "ionic build --configuration=development && npx cap sync ios && ionic cap build ios",
     "buildIosProd": "ionic build && npx cap sync ios && ionic cap build ios",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "ng test --watch=false",
     "lint": "ng lint"
   },
   "private": true,

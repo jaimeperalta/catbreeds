@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
+import { importProvidersFrom } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { ErrorComponent } from './error.component';
 
 describe('ErrorComponent', () => {
@@ -9,8 +11,13 @@ describe('ErrorComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ErrorComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [ErrorComponent],
+      providers: [
+        importProvidersFrom(
+          IonicModule.forRoot(),
+          TranslateModule.forRoot()
+        )
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(ErrorComponent);

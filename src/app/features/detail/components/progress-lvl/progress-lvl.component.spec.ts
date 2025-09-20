@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { ProgressLvlComponent } from './progress-lvl.component';
+import { importProvidersFrom } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('ProgressLvlComponent', () => {
   let component: ProgressLvlComponent;
@@ -9,8 +11,14 @@ describe('ProgressLvlComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProgressLvlComponent ],
-      imports: [IonicModule.forRoot()]
+      declarations: [  ],
+      imports: [ProgressLvlComponent],
+      providers:[
+        importProvidersFrom(
+          IonicModule.forRoot(),
+          TranslateModule.forRoot()
+        )
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(ProgressLvlComponent);

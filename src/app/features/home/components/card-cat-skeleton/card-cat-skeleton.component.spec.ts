@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { CardCatSkeletonComponent } from './card-cat-skeleton.component';
+import { importProvidersFrom } from '@angular/core';
 
 describe('CardCatSkeletonComponent', () => {
   let component: CardCatSkeletonComponent;
@@ -9,8 +10,12 @@ describe('CardCatSkeletonComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardCatSkeletonComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [CardCatSkeletonComponent],
+      providers: [
+        importProvidersFrom(
+          IonicModule.forRoot()
+        )
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(CardCatSkeletonComponent);

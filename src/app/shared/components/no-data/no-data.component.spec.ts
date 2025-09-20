@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { NoDataComponent } from './no-data.component';
+import { importProvidersFrom } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('NoDataComponent', () => {
   let component: NoDataComponent;
@@ -9,8 +11,13 @@ describe('NoDataComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ NoDataComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [NoDataComponent],
+      providers: [
+        importProvidersFrom(
+          IonicModule.forRoot(),
+          TranslateModule.forRoot()
+        )
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(NoDataComponent);
